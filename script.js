@@ -23,14 +23,13 @@ function pokedex() {
         </div>
         <div class="info">
             <h3 class="name">${capitalizeFLetter(data.name)}</h3>
-            <span class="type">Type: <span>${
-              data.types[0].type.name
-            }</span></span>
+            <span class="type">Type: <span>${data.types[0].type.name}</span></span>
+            <span class="type2">Type: <span>${data.types[1].type.name}</span></span>
         </div>
         `;
+        console.log(data.types[1].type.name)//Probleme affichage que des pokemon de double types
       });
-  }
-  console.log(startIndex);
+  };
 }
 
 pokedex();
@@ -87,7 +86,22 @@ function displayNext() {
   }
 }
 
+
 displayPrevious();
 displayNext();
 
 console.log(startIndex);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
