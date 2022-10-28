@@ -9,7 +9,7 @@ function pokedex() {
     fetch("https://pokeapi.co/api/v2/pokemon-form/" + i)
       .then((response) => response.json())
       .then((data) => {
-
+        
         function capitalizeFLetter(name) {
           return (name + "").charAt(0).toUpperCase() + name.substr(1);
         }
@@ -24,15 +24,17 @@ function pokedex() {
         <div class="info">
             <h3 class="name">${capitalizeFLetter(data.name)}</h3>
             <span class="type">Type: <span>${data.types[0].type.name}</span></span>
-            <span class="type2">Type: <span>${data.types[1].type.name}</span></span>
         </div>
         `;
         console.log(data.types[1].type.name)//Probleme affichage que des pokemon de double types
       });
+    }
   };
-}
+
 
 pokedex();
+
+
 
 document.querySelector("#next").addEventListener("click", function () {
   document.querySelector("#pokemonContainer").innerHTML = "";
